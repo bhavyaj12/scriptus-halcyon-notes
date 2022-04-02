@@ -1,3 +1,21 @@
+body {
+    display: flex;
+    flex-direction: column;
+    color: var(--font-color);
+}
+
 :root {
+    --cta-notes: #fc9487;
+    --cta-hover: #97493f;
+    --notes-footer: #321815;
     font-size: 80%;
+}
+
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--cta-notes);
 }

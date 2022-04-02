@@ -1,0 +1,40 @@
+.form-container p {
+  color: var(--gray-txt);
+  font-size: 1.2rem;
+  line-height: 1.5;
+}
+
+.input-required:after {
+  content: " *";
+  color: var(--cta-notes);
+}
+
+.form-row label {
+  width: 30%;
+  font-weight: bold;
+  color: var(--gray-txt);
+}
+
+.form-row .input-field {
+  width: 60%;
+  margin-left: auto;
+}
+
+.form-row {
+  justify-content: space-between;
+  align-items: center;
+}
+
+.form-row .hide-pswrd {
+  width: 60%;
+}
+
+.form-row .hide-pswrd .input-field {
+  width: 100%;
+}
+
+
+.form-container .button.button-primary.button-link {
+    color: var(--font-color);
+    text-decoration-color: var(--cta-notes);
+}

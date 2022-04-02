@@ -1,0 +1,24 @@
+.landing-footer {
+    background-color: var(--notes-footer);
+    width: 100%;
+    min-height: 6rem;
+    padding: 2rem;
+    display: block;
+    color: var(--white-bg);
+    text-align: center;
+    font-size: larger;
+}
+
+.footer-social {
+    display: inline-flex;
+    gap: 1.2rem;
+}
+
+.footer-social .fab {
+    color: var(--white-bg);
+}
+
+.copy-right {
+    font-size: 0.9rem;
+    margin: 1rem;
+}

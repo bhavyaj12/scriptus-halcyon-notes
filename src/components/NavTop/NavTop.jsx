@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { ScriptusLogo } from "../../assets";
 import "./nav-top.css";
 
@@ -6,9 +7,9 @@ const NavTop = () => {
     <header id="simple-nav-header">
       <nav className="simple-nav-bar">
         <div className="nav-logo-box">
-          <a href="./">
+          <Link to="/">
             <img src={ScriptusLogo} alt="logo" className="simple-nav-logo" />
-          </a>
+          </Link>
         </div>
         <div className="simple-nav">
           <ul className="simple-nav-links ul-no-decor display-flex">
@@ -19,14 +20,14 @@ const NavTop = () => {
               </label>
             </li>
             <li className="notes-nav-item">
-              <a href="" className="btn">
+            <Link to="/" className="btn">
                 Home
-              </a>
+              </Link>
             </li>
             <li className="notes-nav-item">
-              <a href="" className="btn">
+            <Link to="/login" className="btn">
                 Login
-              </a>
+            </Link>
             </li>
             <li className="notes-nav-item">
               <a href="" className="btn">

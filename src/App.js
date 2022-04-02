@@ -1,10 +1,16 @@
 import "./App.css";
 import "./styles/main.css";
+import { Footer, NavTop } from "./components";
+import { HomePage } from "./pages";
 
 function App() {
   return (
     <div className="App">
-      <h1 className="h1">THIS IS SCRIPTUS NOTES</h1>
+      <NavTop />
+      <main className="page-container">
+      <HomePage />
+      </main>
+      <Footer />
     </div>
   );
 }

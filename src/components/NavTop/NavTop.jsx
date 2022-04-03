@@ -1,8 +1,23 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { ScriptusLogo } from "../../assets";
+import { useAuth } from "../../contexts";
 import "./nav-top.css";
 
 const NavTop = () => {
+  const { auth, setAuth } = useAuth();
+  const redirect = useNavigate();
+
+  const signOutFunc = (setAuth) => {
+    localStorage.removeItem("AUTH_TOKEN");
+    localStorage.removeItem("username");
+    setAuth(() => ({
+      isAuth: false,
+      token: null,
+      user: "",
+    }));
+    redirect("/login");
+  };
+
   return (
     <header id="simple-nav-header">
       <nav className="simple-nav-bar">
@@ -13,27 +28,33 @@ const NavTop = () => {
         </div>
         <div className="simple-nav">
           <ul className="simple-nav-links ul-no-decor display-flex">
-            <li className="nav-search-bar">
-              <input type="search" placeholder="Search" />
-              <label className="search-bar-icon">
-                <span className="fas fa-search"></span>
-              </label>
-            </li>
             <li className="notes-nav-item">
-            <Link to="/" className="btn">
+              <Link to="/" className="btn">
                 Home
               </Link>
             </li>
             <li className="notes-nav-item">
-            <Link to="/login" className="btn">
-                Login
-            </Link>
-            </li>
-            <li className="notes-nav-item">
-              <a href="" className="btn">
+              <Link to="/addnote" className="btn">
                 Add Note
-              </a>
+              </Link>
             </li>
+            {console.log(auth.isAuth)}
+            {auth.isAuth === true ? (
+              <li className="notes-nav-item">
+                <button
+                  className="btn btn-logout"
+                  onClick={() => signOutFunc(setAuth)}
+                >
+                  Logout
+                </button>
+              </li>
+            ) : (
+              <li className="notes-nav-item">
+                <Link to="/login" className="btn">
+                  Login
+                </Link>
+              </li>
+            )}
           </ul>
         </div>
       </nav>

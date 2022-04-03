@@ -110,11 +110,6 @@ const LoginPage = () => {
           </Link>
           .
         </div>
-        <div className="signup-msg my-5">
-          <Link to="/" className="button button-secondary btn-outline">
-            Go to Logout page
-          </Link>
-        </div>
       </form>
     </main>
   );

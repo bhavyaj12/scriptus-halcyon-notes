@@ -4,13 +4,18 @@
   line-height: 1.5;
 }
 
+.form-container .pswrd-match {
+  color: red;
+  font-size: 1rem;
+}
+
 .input-required:after {
   content: " *";
   color: var(--cta-notes);
 }
 
 .form-row label {
-  width: 30%;
+  width: 35%;
   font-weight: bold;
   color: var(--gray-txt);
 }

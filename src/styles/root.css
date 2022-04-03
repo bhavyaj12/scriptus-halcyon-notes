@@ -6,6 +6,7 @@ body {
 
 :root {
     --cta-notes: #fc9487;
+    --cta-light: #fdbcb4;
     --cta-hover: #97493f;
     --notes-footer: #321815;
     font-size: 80%;

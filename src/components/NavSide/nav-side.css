@@ -1,0 +1,42 @@
+.navbar-side {
+  position: absolute;
+  margin-top: 10rem;
+  top: 0;
+  margin-left: var(--size-1-5);
+  height: fit-content;
+  overflow: hidden visible;
+  border-right: 1px solid var(--grey-bg);
+}
+
+.subheading-navside a {
+  display: block;
+  color: var(--gray-txt);
+  font-size: 1.2rem;
+  font-weight: 300;
+  padding: var(--size-0-5) 0;
+  width: 100%;
+  text-align: justify;
+}
+
+.subheading-navside .flex-row {
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.subheading-navside .flex-row > * {
+  margin: 0rem 1rem;
+  font-size: 2rem;
+}
+
+.subheading-navside .flex-row > span {
+  font-size: 1.5rem;
+}
+
+.subheading-navside a:hover {
+  background-color: var(--cta-light);
+  transition: 0.3s ease;
+}
+
+.subheading-navside a:hover {
+  padding-left: var(--size-1);
+}

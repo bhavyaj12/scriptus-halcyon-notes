@@ -33,20 +33,22 @@ const NavTop = () => {
                 Home
               </Link>
             </li>
-            <li className="notes-nav-item">
-              <Link to="/addnote" className="btn">
-                Add Note
-              </Link>
-            </li>
             {auth.isAuth === true ? (
-              <li className="notes-nav-item">
-                <button
-                  className="btn btn-logout"
-                  onClick={() => signOutFunc(setAuth)}
-                >
-                  Logout
-                </button>
-              </li>
+              <>
+                <li className="notes-nav-item">
+                  <Link to="/addnote" className="btn">
+                    Add Note
+                  </Link>
+                </li>
+                <li className="notes-nav-item">
+                  <button
+                    className="btn btn-logout"
+                    onClick={() => signOutFunc(setAuth)}
+                  >
+                    Logout
+                  </button>
+                </li>
+              </>
             ) : (
               <li className="notes-nav-item">
                 <Link to="/login" className="btn">

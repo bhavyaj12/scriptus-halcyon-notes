@@ -38,8 +38,7 @@
   width: 100%;
 }
 
-
 .form-container .button.button-primary.button-link {
-    color: var(--font-color);
-    text-decoration-color: var(--cta-notes);
+  color: var(--font-color);
+  text-decoration-color: var(--cta-notes);
 }

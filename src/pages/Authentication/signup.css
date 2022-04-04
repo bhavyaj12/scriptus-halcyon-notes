@@ -4,13 +4,18 @@
   line-height: 1.5;
 }
 
+.form-container .pswrd-match {
+  color: var(--error-msg);
+  font-size: 1rem;
+}
+
 .input-required:after {
   content: " *";
   color: var(--cta-notes);
 }
 
 .form-row label {
-  width: 30%;
+  width: 35%;
   font-weight: bold;
   color: var(--gray-txt);
 }
@@ -33,8 +38,7 @@
   width: 100%;
 }
 
-
 .form-container .button.button-primary.button-link {
-    color: var(--font-color);
-    text-decoration-color: var(--cta-notes);
+  color: var(--font-color);
+  text-decoration-color: var(--cta-notes);
 }

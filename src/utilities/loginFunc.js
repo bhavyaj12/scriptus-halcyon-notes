@@ -5,7 +5,6 @@ const loginFunc = async (user) => {
     const { data } = await axios.post("/api/auth/login", user);
     return data;
   } catch (error) {
-    console.log(error);
     return false;
   }
 };

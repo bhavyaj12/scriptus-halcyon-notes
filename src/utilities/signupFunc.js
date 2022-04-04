@@ -8,10 +8,8 @@ const signupFunc = async (user) => {
       email: user.email,
       password: user.password,
     });
-    console.log("from signupFunc data", data );
     return data;
   } catch (error) {
-    console.log(error);
     return false;
   }
 };

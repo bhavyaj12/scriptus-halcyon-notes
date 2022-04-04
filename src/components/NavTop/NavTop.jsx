@@ -38,7 +38,6 @@ const NavTop = () => {
                 Add Note
               </Link>
             </li>
-            {console.log(auth.isAuth)}
             {auth.isAuth === true ? (
               <li className="notes-nav-item">
                 <button

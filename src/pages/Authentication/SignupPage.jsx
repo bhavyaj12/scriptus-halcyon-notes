@@ -15,21 +15,25 @@ const SignupPage = () => {
   });
   const redirect = useNavigate();
   const { setAuth } = useAuth();
+  const [signupError, setSignupError] = useState("");
 
   const signupSubmitHandler = async (user) => {
     const { encodedToken, createdUser } = await signupFunc(user);
-    console.log("from signupSubmitHandler data", encodedToken, createdUser);
-    if (encodedToken) {
-      localStorage.setItem("AUTH_TOKEN", JSON.stringify(encodedToken));
-      localStorage.setItem("username", JSON.stringify(createdUser.firstName));
-      setAuth({
-        isAuth: true,
-        token: encodedToken,
-        user: createdUser.firstName,
-      });
-      redirect("/addnote");
-    } else {
-      console.log("Signup Failed");
+    try {
+      if (encodedToken) {
+        localStorage.setItem("AUTH_TOKEN", JSON.stringify(encodedToken));
+        localStorage.setItem("username", JSON.stringify(createdUser.firstName));
+        setAuth({
+          isAuth: true,
+          token: encodedToken,
+          user: createdUser.firstName,
+        });
+        redirect("/addnote");
+      } else {
+        throw new Error("Signup failed");
+      }
+    } catch (error) {
+      setSignupError(error.message);
     }
   };
 
@@ -134,9 +138,13 @@ const SignupPage = () => {
         {user.password !== user.confirmPassword && (
           <p className="my-5 pswrd-match">Passwords don't match</p>
         )}
-        <button className="button button-primary btn-solid login-btn" disabled={user.password !== user.confirmPassword}>
+        <button
+          className="button button-primary btn-solid login-btn"
+          disabled={user.password !== user.confirmPassword}
+        >
           Sign Up
         </button>
+        {signupError !== "" && <p className="pswrd-match">{signupError}</p>}
         <div className="signup-msg my-5">
           Already a user?{" "}
           <Link to="/login" className="button button-primary button-link">

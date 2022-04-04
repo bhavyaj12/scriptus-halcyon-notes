@@ -11,6 +11,7 @@ const LoginPage = () => {
   });
   const { setAuth } = useAuth();
   const navigate = useNavigate();
+  const [loginError, setLoginError] = useState("");
 
   const testLogin = {
     email: "adarshbalika@gmail.com",
@@ -18,19 +19,22 @@ const LoginPage = () => {
   };
 
   const loginSubmitHandler = async (user) => {
-    const { encodedToken, foundUser } = await loginFunc(user);
-    console.log(encodedToken, foundUser);
-    if (encodedToken) {
-      localStorage.setItem("AUTH_TOKEN", JSON.stringify(encodedToken));
-      localStorage.setItem("username", JSON.stringify(foundUser.firstName));
-      setAuth(() => ({
-        isAuth: true,
-        token: encodedToken,
-        user: foundUser.firstName,
-      }));
-      navigate("/addnote");
-    } else {
-      console.log("Login Failed");
+    try {
+      const { encodedToken, foundUser } = await loginFunc(user);
+      if (encodedToken) {
+        localStorage.setItem("AUTH_TOKEN", JSON.stringify(encodedToken));
+        localStorage.setItem("username", JSON.stringify(foundUser.firstName));
+        setAuth(() => ({
+          isAuth: true,
+          token: encodedToken,
+          user: foundUser.firstName,
+        }));
+        navigate("/addnote");
+      } else {
+        throw new Error("Login failed! Check your filled details.");
+      }
+    } catch (error) {
+      setLoginError(error.message);
     }
   };
 
@@ -99,6 +103,7 @@ const LoginPage = () => {
         >
           Login as Guest
         </button>
+        {loginError !== "" && <p className="pswrd-match">{loginError}</p>}
         <div className="signup-msg my-5">
           Not a user yet?{" "}
           <Link

@@ -1,0 +1,41 @@
+.note-container {
+  width: auto;
+  max-width: 30%;
+  min-width: 18rem;
+  background-color: pink;
+  border-radius: 1.5rem;
+  height: auto;
+  position: relative;
+  text-align: center;
+}
+
+.note-label {
+  margin-left: auto;
+  background-color: var(--gray-txt);
+  color: var(--white-bg);
+  padding: 3px;
+  border-radius: 5px;
+}
+
+.note-content {
+  font-size: 1.2rem;
+}
+
+.note-title {
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+.pin-icon {
+  position: absolute;
+  top: 1.5rem;
+  left: 1.5rem;
+}
+
+.note-footer {
+  justify-content: space-between;
+}
+
+.note-icons {
+  gap: 1rem;
+}

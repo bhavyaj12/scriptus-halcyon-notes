@@ -3,7 +3,7 @@
   width: auto;
   max-width: 30rem;
   min-width: 18rem;
-  background-color: pink;
+  background-color: var(--cta-ultralight);
   border-radius: 1.5rem;
   height: auto;
   position: relative;

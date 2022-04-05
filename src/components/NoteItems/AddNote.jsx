@@ -47,7 +47,7 @@ const AddNote = () => {
         <button type="submit" className="button btn-solid button-primary">Save Note</button>
         <div className="flex-row add-note-footer">
           <div className="flex-row add-note-icons">
-            <LabelRoundedIcon />
+            <LabelRoundedIcon className="icons-display"/>
           </div>
         </div>
       </div>

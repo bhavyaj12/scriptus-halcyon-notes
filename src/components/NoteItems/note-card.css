@@ -1,6 +1,7 @@
 .note-container {
+  display: flex;
   width: auto;
-  max-width: 30%;
+  max-width: 30rem;
   min-width: 18rem;
   background-color: pink;
   border-radius: 1.5rem;

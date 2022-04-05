@@ -9,3 +9,13 @@
   padding-bottom: 13rem;
   min-height: 100vh;
 }
+
+.icons-display {
+  color: var(--notes-footer);
+}
+
+.icons-display:hover {
+  color: var(--cta-notes);
+  cursor: pointer;
+  transition: 200ms ease;
+}

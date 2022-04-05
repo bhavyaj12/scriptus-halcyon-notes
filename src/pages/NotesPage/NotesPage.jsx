@@ -1,10 +1,10 @@
 import { useNote } from "../../contexts";
-import { NavSide, NoteCard, AddNote } from "../../components";
+import { NavSide, NoteCard, AddNote, Modal } from "../../components";
 import "./notes-page.css";
 
 const NotesPage = () => {
   const {
-    noteState: { notes },
+    noteState: { notes, showModal },
   } = useNote();
   return (
     <main className="grid-col-2">
@@ -23,6 +23,7 @@ const NotesPage = () => {
           </section>
         </section>
       </div>
+      {showModal && <Modal />}
     </main>
   );
 };

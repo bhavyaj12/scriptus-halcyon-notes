@@ -1,0 +1,46 @@
+.add-note-container {
+  box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.2), 15px 17px 60px var(--grey-bg);
+  width: 50%;
+  height: 20rem;
+  position: relative;
+  border-radius: 0.5rem;
+}
+
+.add-note-title {
+  outline: none;
+  border: none;
+  font-size: 1.5rem;
+}
+
+.add-note-content {
+  outline: none;
+  border: none;
+  height: 90%;
+  width: auto;
+  font-size: 1.2rem;
+}
+
+.add-note-container .button.btn-solid.button-primary {
+  border: none;
+  display: flex;
+  max-width: 30%;
+  width: auto;
+  min-width: 4rem;
+  margin: 0;
+  background-color: var(--cta-notes);
+}
+
+.add-note-pin {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+}
+
+.add-note-footer {
+  justify-content: space-between;
+  align-items: center;
+}
+
+.add-note-icons {
+  gap: 1rem;
+}

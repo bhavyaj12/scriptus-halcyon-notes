@@ -29,6 +29,15 @@
   background: var(--cta-hover);
 }
 
+.simple-nav-bar .simple-nav .simple-nav-links li .btn.btn.btn-logout:hover::after {
+  background: transparent;
+}
+
+.simple-nav-bar .simple-nav .simple-nav-links li .btn.btn.btn-logout:hover {
+  opacity: 0.8;
+  cursor: pointer;
+}
+
 .simple-nav-bar {
   background-color: var(--cta-notes);
   height: 6rem;

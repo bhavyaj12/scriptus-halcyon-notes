@@ -13,7 +13,7 @@ const NavSide = () => {
         <a className="link-no-decor" href="">
           <div className="flex-row p-5 m-5">
             <HomeRoundedIcon />
-            <span>Home</span>
+            <span>Notes</span>
           </div>
         </a>
         <a className="link-no-decor" href="">

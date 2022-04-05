@@ -11,6 +11,10 @@ const NotesProvider = ({ children }) => {
   });
   const [noteState, noteDispatch] = useReducer(NotesReducer, {
     notes: [],
+    showModal: false,
+    noteToEdit: {},
+    notesTrash: [],
+    notesArchive: [],
   });
 
   return (

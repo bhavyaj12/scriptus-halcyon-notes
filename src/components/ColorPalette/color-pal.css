@@ -1,0 +1,30 @@
+.palette-container, .palette-container-modal {
+  z-index: 5;
+  min-width: 5rem;
+  position: absolute;
+  width: auto;
+  height: auto;
+  border-radius: 0.5rem;
+  background-color: var(--light-grey);
+  right: 0;
+  bottom: -5rem;
+  padding: 0.8rem;
+  box-shadow: rgba(166, 159, 162, 0.477) 0px 7px 29px 0px;
+}
+
+.palette-container-modal {
+  right: 30%;
+  bottom: 18%;
+}
+
+.color-item {
+  margin: 0.25rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+}
+
+.color-item:hover {
+  cursor: pointer;
+  opacity: 0.8;
+}

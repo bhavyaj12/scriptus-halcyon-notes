@@ -1,20 +1,28 @@
-.palette-container, .palette-container-modal {
+.palette-container {
   z-index: 5;
   min-width: 5rem;
   position: absolute;
-  width: auto;
+  width: 100%;
   height: auto;
   border-radius: 0.5rem;
   background-color: var(--light-grey);
   right: 0;
-  bottom: -5rem;
+  left: 0;
+  top:100%;
   padding: 0.8rem;
   box-shadow: rgba(166, 159, 162, 0.477) 0px 7px 29px 0px;
 }
 
 .palette-container-modal {
+  z-index: 5;
+  min-width: 5rem;
+  position: absolute;
   right: 30%;
-  bottom: 18%;
+  top: 70%;
+  background-color: var(--light-grey);
+  padding: 0.8rem;
+  border-radius: 0.5rem;
+  box-shadow: rgba(166, 159, 162, 0.477) 0px 7px 29px 0px;
 }
 
 .color-item {

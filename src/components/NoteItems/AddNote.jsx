@@ -2,7 +2,7 @@ import { useState } from "react";
 import { addNotes } from "../../utilities";
 import { useNote } from "../../contexts";
 import { ColorPalette } from "../../components";
-
+import "../../styles/main.css";
 import {
   LabelRoundedIcon,
   PushPinRoundedIcon,
@@ -52,14 +52,10 @@ const AddNote = () => {
     }
   };
 
-  const noteFormColor =
-    noteColor === "var(--cta-ultralight)" ? "white" : noteColor;
-
   return (
     <form
       className="add-note-container flex-col mb-3 p-3"
       onSubmit={(e) => addNoteHandler(e)}
-      style={{ backgroundColor: noteFormColor }}
     >
       <PushPinRoundedIcon className="add-note-pin" />
       <input

@@ -15,6 +15,9 @@ const NotesProvider = ({ children }) => {
     noteToEdit: {},
     notesTrash: [],
     notesArchive: [],
+    pickColor: false,
+    pickColorModal: false,
+    labels: ["no-label", "study", "books", "movies", "work"]
   });
 
   return (

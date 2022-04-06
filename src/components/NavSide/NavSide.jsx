@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import {
   HomeRoundedIcon,
   LabelRoundedIcon,
@@ -10,30 +11,30 @@ const NavSide = () => {
   return (
     <nav className="navbar-side" id="aside">
       <div className="subheading-navside">
-        <a className="link-no-decor" href="">
+        <Link to="/addnote" className="link-no-decor">
           <div className="flex-row p-5 m-5">
             <HomeRoundedIcon />
             <span>Notes</span>
           </div>
-        </a>
+        </Link>
         <a className="link-no-decor" href="">
         <div className="flex-row p-5 m-5">
             <LabelRoundedIcon />
             <span>Labels</span>
           </div>
         </a>
-        <a className="link-no-decor" href="">
+        <Link to="/archive" className="link-no-decor">
         <div className="flex-row p-5 m-5">
             <ArchiveRoundedIcon />
             <span>Archive</span>
           </div>
-        </a>
-        <a className="link-no-decor" href="">
+        </Link>
+        <Link to="/trash" className="link-no-decor">
         <div className="flex-row p-5 m-5">
             <DeleteRoundedIcon />
             <span>Trash</span>
           </div>
-        </a>
+        </Link>
       </div>
     </nav>
   );

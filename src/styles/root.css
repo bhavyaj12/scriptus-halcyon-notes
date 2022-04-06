@@ -7,6 +7,7 @@ body {
 :root {
     --cta-notes: #fc9487;
     --cta-light: #fdbcb4;
+    --cta-ultralight: #ffd8d4;
     --cta-hover: #97493f;
     --error-msg: #FF0000;
     --notes-footer: #321815;

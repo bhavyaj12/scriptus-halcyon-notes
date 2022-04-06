@@ -3,7 +3,7 @@ import Mockman from "mockman-js";
 import "./App.css";
 import "./styles/main.css";
 import { Footer, NavTop } from "./components";
-import { HomePage, LoginPage, SignupPage, NotesPage } from "./pages";
+import { HomePage, LoginPage, SignupPage, NotesPage, TrashPage, ArchivePage } from "./pages";
 
 function App() {
   return (
@@ -16,6 +16,8 @@ function App() {
             <Route path="/login" element={<LoginPage />} />
             <Route path="/signup" element={<SignupPage />} />
             <Route path="/addnote" element={<NotesPage />} />
+            <Route path="/trash" element={<TrashPage />} />
+            <Route path="/archive" element={<ArchivePage />} />
             <Route path="/mockman" element={<Mockman />} />
           </Routes>
         </div>

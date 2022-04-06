@@ -17,3 +17,8 @@
     justify-content: center;
     flex-wrap: wrap;
 }
+
+.grid-col-item.flex-col .h1 {
+    margin: 0;
+    text-align: center;
+}

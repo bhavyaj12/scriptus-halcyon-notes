@@ -1,6 +1,6 @@
-.add-note-container.note-form {
+.add-note-container {
   box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.2), 15px 17px 60px var(--grey-bg);
-  width: 40rem;
+  width: 50%;
   height: 20rem;
   position: relative;
   border-radius: 0.5rem;
@@ -20,7 +20,7 @@
   font-size: 1.2rem;
 }
 
-.button.btn-solid.button-primary {
+.add-note-container .button.btn-solid.button-primary {
   border: none;
   display: flex;
   max-width: 30%;

@@ -52,12 +52,9 @@ const AddNote = () => {
     }
   };
 
-  const noteFormColor =
-    noteColor === "var(--cta-ultralight)" ? "white" : noteColor;
-
   return (
     <form
-      className="add-note-container note-form flex-col mb-3 p-3"
+      className="add-note-container flex-col mb-3 p-3"
       onSubmit={(e) => addNoteHandler(e)}
     >
       <PushPinRoundedIcon className="add-note-pin" />

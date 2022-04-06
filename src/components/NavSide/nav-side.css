@@ -51,6 +51,8 @@
 
 .subheading-navside .flex-row .button.btn-solid.button-primary {
   display: flex;
+  justify-content: center;
+  align-items: center;
   min-width: 0;
   max-width: fit-content;
   width: 20%;
@@ -80,4 +82,31 @@
 
 .subheading-navside a:hover {
   padding-left: var(--size-1);
+}
+
+@media screen and (max-width: 800px) {
+  .navbar-side {
+    position: absolute;
+    padding: 0;
+    margin-top: 10rem;
+    top: 0;
+    width: 5rem;
+    height: fit-content;
+    overflow: hidden visible;
+    border-right: 1px solid var(--grey-bg);
+  }
+
+  .subheading-navside a {
+    padding: 0;
+    margin: 0;
+  }
+
+  .subheading-navside .flex-row {
+    padding: 0.3rem;
+    margin: 0.3rem;
+  }
+
+  .subheading-navside .flex-row span {
+    font-size: 1rem;
+  }
 }

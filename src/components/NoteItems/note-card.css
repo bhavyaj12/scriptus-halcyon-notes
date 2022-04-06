@@ -40,3 +40,10 @@
 .note-icons {
   gap: 1rem;
 }
+
+@media screen and (max-width: 500px) {
+  .note-container {
+    width: 12rem;
+  }
+};
+  

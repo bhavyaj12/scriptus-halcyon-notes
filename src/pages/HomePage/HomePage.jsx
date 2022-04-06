@@ -1,8 +1,9 @@
 import "./home-page.css";
 import { LandingImg } from "../../assets";
-
+import { Footer } from "../../components";
 const HomePage = () => {
   return (
+    <>
     <main className="page-container">
       <div className="container-landing ">
         <img src={LandingImg} alt="girl notes" className="img-landing" />
@@ -31,6 +32,8 @@ const HomePage = () => {
         </div>
       </div>
     </main>
+    <Footer />
+    </>
   );
 };
 

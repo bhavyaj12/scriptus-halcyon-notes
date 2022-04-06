@@ -12,14 +12,22 @@ import "./nav-side.css";
 const NavSide = () => {
   const { noteState, noteDispatch } = useNote();
   const [addLabel, setAddLabel] = useState("");
+  const [error, setError] = useState("");
 
   const createNewLabel = () => {
-    noteDispatch({ type: "CREATE_LABEL", payload: addLabel });
-    setAddLabel("");
+    addLabel !== ""
+      ? noteDispatch({ type: "CREATE_LABEL", payload: addLabel })
+      : setError("Can't add empty label");
+    
+    setTimeout(() => {
+      setAddLabel("");
+      setError("");
+    }, 2000);
   };
 
   return (
     <nav className="navbar-side" id="aside">
+      {error !== "" && <p className="alert-container alert-error">{error}</p>}
       <div className="subheading-navside">
         <Link to="/addnote" className="link-no-decor">
           <div className="flex-row p-5 m-5">
@@ -45,7 +53,9 @@ const NavSide = () => {
         </div>
         <div className="flex-col">
           {noteState.labels.map((label) => (
-            <div key={label} className="label-nav-item m-1">{label}</div>
+            <div key={label} className="label-nav-item m-1">
+              {label}
+            </div>
           ))}
         </div>
         <div className="flex-row create-label-row">

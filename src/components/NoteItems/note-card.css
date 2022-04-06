@@ -1,8 +1,8 @@
 .note-container {
   display: flex;
-  width: auto;
+  width: 20rem;
   max-width: 30rem;
-  min-width: 18rem;
+  min-width: 10rem;
   background-color: var(--cta-ultralight);
   border-radius: 1.5rem;
   height: auto;

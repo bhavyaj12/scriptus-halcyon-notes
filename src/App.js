@@ -1,5 +1,4 @@
 import { Routes, Route } from "react-router-dom";
-import Mockman from "mockman-js";
 import "./App.css";
 import "./styles/main.css";
 import { Footer, NavTop } from "./components";
@@ -18,10 +17,8 @@ function App() {
             <Route path="/addnote" element={<NotesPage />} />
             <Route path="/trash" element={<TrashPage />} />
             <Route path="/archive" element={<ArchivePage />} />
-            <Route path="/mockman" element={<Mockman />} />
           </Routes>
         </div>
-        <Footer />
       </div>
     </div>
   );

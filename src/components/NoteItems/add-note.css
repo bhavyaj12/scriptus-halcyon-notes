@@ -44,3 +44,8 @@
 .add-note-icons {
   gap: 1rem;
 }
+
+.select-label {
+  border: 2px solid var(--cta-notes);
+  border-radius: 3px;
+}

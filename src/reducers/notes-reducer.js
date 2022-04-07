@@ -31,7 +31,16 @@ const NotesReducer = (noteState, { type, payload }) => {
       return {
         ...noteState,
         notesArchive: payload,
-      }
+      };
+
+    case "SHOW_COLOR_PALETTE":
+      return { ...noteState, pickColor: payload };
+
+    case "SHOW_COLOR_PALETTE_MODAL":
+      return { ...noteState, pickColorModal: payload };
+
+    case "CREATE_LABEL":
+      return { ...noteState, labels: [...noteState.labels, payload] };
 
     default:
       return noteState;

@@ -11,7 +11,7 @@ body {
     --cta-hover: #97493f;
     --error-msg: #FF0000;
     --notes-footer: #321815;
-    font-size: 80%;
+    font-size: 70%;
 }
 
 ::-webkit-scrollbar {

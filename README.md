@@ -4,6 +4,12 @@
 
 Scriptus Notes is a Modern Note Taking App with a unique and sophisticated design which will allow you to scribble down all your unique and amazing ideas, and  give yourself a productivity boost by managing your task list and more.
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/cd679fdc-6454-4d0c-ad3a-55745eb369b9/deploy-status)](https://app.netlify.com/sites/scriptus/deploys)
+
+## Preview
+
+https://user-images.githubusercontent.com/59730227/162260097-b563839e-55fb-41cc-8af4-6b49f27c860c.mp4
+
 ## Features
 - It is made using [Halcyon-UI](https://github.com/bhavyaj12/HalcyonUI)
 - This is a frontend Note Taking Application created using the mock backend [mockBee](https://github.com/neogcamp/mockBee).
@@ -52,9 +58,6 @@ Scriptus Notes is a Modern Note Taking App with a unique and sophisticated desig
 - Filtering by priority
 - Searching
 - Adding Images to Note
-
-
-<!-- [![Netlify Status]] -->
 
 ## Tech Stack
 - React.js

@@ -1,24 +1,55 @@
 .grid-col-2 {
-    grid-template-columns: 20% 1fr;
+  grid-template-columns: 20% 1fr;
 }
 
 .notes-editor-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 .notes-display {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 .grid-col-item.flex-col .h1 {
-    margin: 0;
-    text-align: center;
+  margin: 0;
+  text-align: center;
+}
+
+.filter-container {
+  margin-bottom: 1rem;
+  align-items: center;
+  border: 1px solid var(--cta-notes);
+  border-radius: 5px;
+  justify-content: space-around;
+  width: 70%;
+}
+
+.filter-container > * {
+  padding: 0.5rem;
+}
+
+.radio-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.filter-container.flex-row .button.button-link {
+    text-decoration-color: var(--cta-notes);
+}
+
+.filter-container.flex-row .button.button-link:hover {
+    opacity: 0.8;
+}
+
+.filter-container.flex-row label {
+    font-size: 1.1rem;
 }

@@ -42,6 +42,17 @@ const NotesReducer = (noteState, { type, payload }) => {
     case "CREATE_LABEL":
       return { ...noteState, labels: [...noteState.labels, payload] };
 
+    case "SORT_BY_CREATED_ON":
+      return {
+        ...noteState,
+        sortByDateTime:
+          payload === "old-to-new"
+            ? "OLDEST_FIRST"
+            : payload === "new-to-old"
+            ? "NEWEST_FIRST"
+            : "",
+      };
+
     default:
       return noteState;
   }

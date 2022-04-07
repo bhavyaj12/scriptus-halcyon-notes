@@ -17,7 +17,8 @@ const NotesProvider = ({ children }) => {
     notesArchive: [],
     pickColor: false,
     pickColorModal: false,
-    labels: ["no-label", "study", "books", "movies", "work"]
+    labels: ["no-label", "study", "books", "movies", "work"],
+    sortByDateTime: "",
   });
 
   return (

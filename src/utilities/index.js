@@ -4,3 +4,4 @@ export { addNotes } from "./addNotes";
 export { editNote } from "./editNote";
 export { trashNote } from "./trashNote";
 export { archiveNote, restoreNote, trashArchivedNote } from "./archiveFunc";
+export { sortDateTime } from "./sortDateTime";

@@ -52,10 +52,22 @@ const AddNote = () => {
     }
   };
 
+  const noteFormColor =
+    noteColor === "var(--cta-ultralight)" ? "white" : noteColor;
+
   return (
     <form
       className="add-note-container flex-col mb-3 p-3"
       onSubmit={(e) => addNoteHandler(e)}
+      style={{
+        backgroundColor: noteFormColor,
+        boxShadow:
+          "0px 0px 20px 0px rgba(0, 0, 0, 0.2), 15px 17px 60px var(--grey-bg)",
+        width: "50%",
+        height: "20rem",
+        position: "relative",
+        borderRadius: "0.5rem",
+      }}
     >
       <PushPinRoundedIcon className="add-note-pin" />
       <input
@@ -98,7 +110,11 @@ const AddNote = () => {
               className="select-label"
               onChange={(e) => setNoteLabel(e.target.value)}
             >
-              {noteState.labels.map((labelOption) => <option value={labelOption} key={labelOption}>{labelOption}</option>)}
+              {noteState.labels.map((labelOption) => (
+                <option value={labelOption} key={labelOption}>
+                  {labelOption}
+                </option>
+              ))}
             </select>
           </div>
         </div>

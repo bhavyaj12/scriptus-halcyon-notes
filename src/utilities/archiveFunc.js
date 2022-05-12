@@ -1,5 +1,23 @@
 import axios from "axios";
 
+const fetchArchivedNotes = async () => {
+  const authToken = JSON.parse(localStorage.getItem("AUTH_TOKEN"));
+  const Headers = { authorization: authToken };
+  try {
+    const {
+      data: { archives },
+      status,
+    } = await axios.get("/api/archives", {
+      headers: Headers,
+    });
+    if (status === 200) {
+      return archives;
+    }
+  } catch (error) {
+    console.log(error.message);
+  }
+};
+
 const archiveNote = async (noteDispatch, note) => {
   const authToken = JSON.parse(localStorage.getItem("AUTH_TOKEN"));
   const Headers = { authorization: authToken };
@@ -70,4 +88,4 @@ const trashArchivedNote = async (noteDispatch, note) => {
   }
 };
 
-export { archiveNote, restoreNote, trashArchivedNote };
+export { archiveNote, restoreNote, trashArchivedNote, fetchArchivedNotes };

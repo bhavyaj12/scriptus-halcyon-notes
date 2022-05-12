@@ -15,18 +15,23 @@ const SignupPage = () => {
   });
   const redirect = useNavigate();
   const { setAuth } = useAuth();
+  const [passwordVisible, setPasswordVisible] = useState(false);
+  const [confirmPassVisible, setConfirmPassVisible] = useState(false);
   const [signupError, setSignupError] = useState("");
 
   const signupSubmitHandler = async (user) => {
-    const { encodedToken, createdUser } = await signupFunc(user);
+    const {
+      encodedToken,
+      createdUser: { notes, archives, ...userDetails },
+    } = await signupFunc(user);
     try {
       if (encodedToken) {
         localStorage.setItem("AUTH_TOKEN", JSON.stringify(encodedToken));
-        localStorage.setItem("username", JSON.stringify(createdUser.firstName));
+        localStorage.setItem("user", JSON.stringify(userDetails));
         setAuth({
           isAuth: true,
           token: encodedToken,
-          user: createdUser.firstName,
+          user: { ...userDetails },
         });
         redirect("/addnote");
       } else {
@@ -99,7 +104,7 @@ const SignupPage = () => {
           </label>
           <div className="my-5 hide-pswrd">
             <input
-              type="password"
+              type={`${passwordVisible ? "text" : "password"}`}
               className="input-field"
               placeholder="Enter password"
               required
@@ -108,9 +113,19 @@ const SignupPage = () => {
               value={user.password}
               onChange={(e) => setUser({ ...user, password: e.target.value })}
             />
-            <span>
-              <i className="fa fa-eye-slash"></i>
-            </span>
+            <button
+              className="hide-pass-btn"
+              onClick={(e) => {
+                e.preventDefault();
+                setPasswordVisible(!passwordVisible);
+              }}
+            >
+              {passwordVisible ? (
+                <i className="fa fa-eye-slash"></i>
+              ) : (
+                <i className="fa fa-eye"></i>
+              )}
+            </button>
           </div>
         </div>
         <div className="form-row flex">
@@ -119,7 +134,7 @@ const SignupPage = () => {
           </label>
           <div className="my-5 hide-pswrd">
             <input
-              type="password"
+              type={`${confirmPassVisible ? "text" : "password"}`}
               className="input-field"
               placeholder="Re-enter password"
               required
@@ -130,9 +145,27 @@ const SignupPage = () => {
                 setUser({ ...user, confirmPassword: e.target.value })
               }
             />
-            <span>
-              <i className="fa fa-eye-slash"></i>
-            </span>
+            <button
+              className="hide-pass-btn"
+              onClick={(e) => {
+                e.preventDefault();
+                setConfirmPassVisible(!confirmPassVisible);
+              }}
+            >
+              {confirmPassVisible ? (
+                <i className="fa fa-eye-slash"></i>
+              ) : (
+                <i className="fa fa-eye"></i>
+              )}
+            </button>
+          </div>
+        </div>
+        <div className="forgot-pwd-row my-5">
+          <div className="remember-chkbox">
+            <input type="checkbox" id="accept-conditions" required/>
+            <label htmlFor="accept-conditions" className="mx-2">
+              I accept the terms and conditions.
+            </label>
           </div>
         </div>
         {user.password !== user.confirmPassword && (

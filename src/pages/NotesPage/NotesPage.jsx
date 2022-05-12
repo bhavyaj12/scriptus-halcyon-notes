@@ -1,5 +1,7 @@
-import { useNote } from "../../contexts";
-import { sortDateTime } from "../../utilities";
+import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import { useNote, useAuth } from "../../contexts";
+import { sortDateTime, fetchNotes } from "../../utilities";
 import { NavSide, NoteCard, AddNote, Modal } from "../../components";
 import "./notes-page.css";
 
@@ -8,6 +10,13 @@ const NotesPage = () => {
     noteState: { notes, showModal, sortByDateTime },
     noteDispatch,
   } = useNote();
+
+  useEffect(() => {
+    (async () => {
+      const notes = await fetchNotes();
+      noteDispatch({ type: "FETCH_NOTES", payload: notes });
+    })();
+  }, []);
 
   const sortedNotes = sortDateTime(notes, sortByDateTime);
   return (

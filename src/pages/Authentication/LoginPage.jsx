@@ -15,8 +15,8 @@ const LoginPage = () => {
   const [loginError, setLoginError] = useState("");
 
   const testLogin = {
-    email: "adarshbalika@gmail.com",
-    password: "adarshBalika123",
+    email: "guest@gmail.com",
+    password: "Guest1234",
   };
 
   const loginSubmitHandler = async (user) => {

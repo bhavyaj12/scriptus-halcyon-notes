@@ -6,6 +6,18 @@ const NotesReducer = (noteState, { type, payload }) => {
         notes: [...payload],
       };
 
+    case "FETCH_NOTES":
+      return {
+        ...noteState,
+        notes: payload,
+      };
+
+    case "FETCH_ARCHIVED_NOTES":
+      return {
+        ...noteState,
+        notesArchive: payload,
+      };
+
     case "SHOW_MODAL":
       return {
         ...noteState,
@@ -51,6 +63,19 @@ const NotesReducer = (noteState, { type, payload }) => {
             : payload === "new-to-old"
             ? "NEWEST_FIRST"
             : "",
+      };
+
+    case "RESET_NOTES":
+      return {
+        ...noteState,
+        notes: [],
+        showModal: false,
+        noteToEdit: {},
+        notesArchive: [],
+        pickColor: false,
+        pickColorModal: false,
+        labels: ["no-label", "study", "books", "movies", "work"],
+        sortByDateTime: "",
       };
 
     default:

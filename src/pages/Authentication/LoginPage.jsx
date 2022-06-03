@@ -9,26 +9,30 @@ const LoginPage = () => {
     email: "",
     password: "",
   });
+  const [passwordVisible, setPasswordVisible] = useState(false);
   const { setAuth } = useAuth();
   const navigate = useNavigate();
   const [loginError, setLoginError] = useState("");
 
   const testLogin = {
-    email: "adarshbalika@gmail.com",
-    password: "adarshBalika123",
+    email: "guest@gmail.com",
+    password: "Guest1234",
   };
 
   const loginSubmitHandler = async (user) => {
     try {
-      const { encodedToken, foundUser } = await loginFunc(user);
+      const {
+        encodedToken,
+        foundUser: { notes, archives, ...userDetails },
+      } = await loginFunc(user);
       if (encodedToken) {
         localStorage.setItem("AUTH_TOKEN", JSON.stringify(encodedToken));
-        localStorage.setItem("username", JSON.stringify(foundUser.firstName));
-        setAuth(() => ({
+        localStorage.setItem("user", JSON.stringify(userDetails));
+        setAuth({
           isAuth: true,
           token: encodedToken,
-          user: foundUser.firstName,
-        }));
+          user: { ...userDetails },
+        });
         navigate("/addnote");
       } else {
         throw new Error("Login failed! Check your filled details.");
@@ -63,7 +67,7 @@ const LoginPage = () => {
         />
         <div className="my-5 hide-pswrd">
           <input
-            type="password"
+            type={`${passwordVisible ? "text" : "password"}`}
             className="input-field"
             placeholder="Enter password"
             required
@@ -72,9 +76,16 @@ const LoginPage = () => {
             value={user.password}
             onChange={(e) => setUser({ ...user, password: e.target.value })}
           />
-          <span>
-            <i className="fa fa-eye-slash"></i>
-          </span>
+          <button className="hide-pass-btn" onClick={(e) => {
+            e.preventDefault();
+            setPasswordVisible(!passwordVisible);
+          }}>
+              {passwordVisible ? (
+                <i className="fa fa-eye-slash"></i>
+              ) : (
+                <i className="fa fa-eye"></i>
+              )}
+          </button>
         </div>
         <div className="forgot-pwd-row my-5">
           <div className="remember-chkbox">

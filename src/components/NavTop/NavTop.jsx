@@ -1,20 +1,22 @@
 import { Link, useNavigate } from "react-router-dom";
 import { ScriptusLogo } from "../../assets";
-import { useAuth } from "../../contexts";
+import { useAuth, useNote } from "../../contexts";
 import "./nav-top.css";
 
 const NavTop = () => {
   const { auth, setAuth } = useAuth();
+  const { noteState, noteDispatch } = useNote();
   const redirect = useNavigate();
 
   const signOutFunc = (setAuth) => {
     localStorage.removeItem("AUTH_TOKEN");
-    localStorage.removeItem("username");
-    setAuth(() => ({
+    localStorage.removeItem("user");
+    setAuth({
       isAuth: false,
       token: null,
-      user: "",
-    }));
+      user: {},
+    });
+    noteDispatch({type: "RESET_NOTES"})
     redirect("/login");
   };
 

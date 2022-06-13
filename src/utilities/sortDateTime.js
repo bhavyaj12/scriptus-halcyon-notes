@@ -1,13 +1,15 @@
-const sortDateTime = (notes, sortBy) => {
-  if (sortBy === "OLDEST_FIRST")
+const sortDateTime = (notes, sortByDateTime) => {
+  if (sortByDateTime === "OLDEST_FIRST")
     return [...notes].sort(
       (a, b) => new Date(a.createdOn) - new Date(b.createdOn)
     );
-  if (sortBy === "NEWEST_FIRST")
+  if (sortByDateTime === "NEWEST_FIRST")
     return [...notes].sort(
       (a, b) => new Date(b.createdOn) - new Date(a.createdOn)
     );
-  return notes;
+  else {
+    return notes;
+  }
 };
 
 export { sortDateTime };

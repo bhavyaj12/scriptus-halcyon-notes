@@ -1,3 +1,4 @@
+import dayjs from "dayjs";
 import { useNote } from "../../contexts";
 import { trashNote, archiveNote, restoreNote, trashArchivedNote } from "../../utilities";
 import {
@@ -27,7 +28,7 @@ const NoteCard = ({ note, pathname }) => {
       <p className="note-title mb-3">{title}</p>
       <p className="note-content">{content}</p>
       <div className="flex-row note-footer mt-7">
-        <p className="text-sm">{createdOn}</p>
+        <p className="text-sm">{dayjs(new Date(createdOn)).format("DD/MM/YYYY, HH:mm:ss")}</p>
         {pathname !== "/trash" && (
           <div className="flex-row note-icons">
             {pathname !== "/archive" && (

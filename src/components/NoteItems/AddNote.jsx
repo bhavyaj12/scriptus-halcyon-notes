@@ -20,7 +20,7 @@ const AddNote = () => {
   const [noteColor, setNoteColor] = useState("var(--cta-ultralight)");
   const [noteLabel, setNoteLabel] = useState("no-label");
 
-  const noteDate = new Date().toLocaleString('en-IN');
+  const noteDate = new Date();
 
   const addNoteHandler = (e) => {
     e.preventDefault();

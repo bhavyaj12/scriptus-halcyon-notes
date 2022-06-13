@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const fetchArchivedNotes = async () => {
-  const authToken = JSON.parse(localStorage.getItem("AUTH_TOKEN"));
+  const authToken = localStorage.getItem("SCRIPTUS_AUTH_TOKEN");
   const Headers = { authorization: authToken };
   try {
     const {
@@ -19,7 +19,7 @@ const fetchArchivedNotes = async () => {
 };
 
 const archiveNote = async (noteDispatch, note) => {
-  const authToken = JSON.parse(localStorage.getItem("AUTH_TOKEN"));
+  const authToken = localStorage.getItem("SCRIPTUS_AUTH_TOKEN");
   const Headers = { authorization: authToken };
   try {
     const {
@@ -44,7 +44,7 @@ const archiveNote = async (noteDispatch, note) => {
 };
 
 const restoreNote = async (noteDispatch, note) => {
-  const authToken = JSON.parse(localStorage.getItem("AUTH_TOKEN"));
+  const authToken = localStorage.getItem("SCRIPTUS_AUTH_TOKEN");
   const Headers = { authorization: authToken };
   try {
     const {
@@ -69,7 +69,7 @@ const restoreNote = async (noteDispatch, note) => {
 };
 
 const trashArchivedNote = async (noteDispatch, note) => {
-  const authToken = JSON.parse(localStorage.getItem("AUTH_TOKEN"));
+  const authToken = localStorage.getItem("SCRIPTUS_AUTH_TOKEN");
   const Headers = { authorization: authToken };
   try {
     const {

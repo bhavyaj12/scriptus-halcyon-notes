@@ -9,8 +9,8 @@ const NavTop = () => {
   const redirect = useNavigate();
 
   const signOutFunc = (setAuth) => {
-    localStorage.removeItem("AUTH_TOKEN");
-    localStorage.removeItem("user");
+    localStorage.removeItem("SCRIPTUS_AUTH_TOKEN");
+    localStorage.removeItem("scriptus_user");
     setAuth({
       isAuth: false,
       token: null,

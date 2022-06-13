@@ -1,5 +1,4 @@
 import { useEffect } from "react";
-import { useNavigate } from "react-router-dom";
 import { useNote, useAuth } from "../../contexts";
 import { sortDateTime, fetchNotes } from "../../utilities";
 import { NavSide, NoteCard, AddNote, Modal } from "../../components";
@@ -10,13 +9,14 @@ const NotesPage = () => {
     noteState: { notes, showModal, sortByDateTime },
     noteDispatch,
   } = useNote();
+  const { isAuth } = useAuth();
 
   useEffect(() => {
     (async () => {
-      const notes = await fetchNotes();
-      noteDispatch({ type: "FETCH_NOTES", payload: notes });
+      const response = await fetchNotes();
+      noteDispatch({ type: "FETCH_NOTES", payload: response });
     })();
-  }, []);
+  }, [isAuth]);
 
   const sortedNotes = sortDateTime(notes, sortByDateTime);
   return (
@@ -73,8 +73,8 @@ const NotesPage = () => {
           </div>
           <AddNote />
           <section className="notes-display">
-            {sortedNotes.length > 0 ? (
-              sortedNotes.map((item) => <NoteCard note={item} key={item._id} />)
+            {sortedNotes?.length > 0 ? (
+              sortedNotes?.map((item) => <NoteCard note={item} key={item._id} />)
             ) : (
               <h3 className="h3">Saved Notes appear here</h3>
             )}

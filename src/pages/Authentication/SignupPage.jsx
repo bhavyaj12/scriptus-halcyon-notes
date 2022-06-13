@@ -26,8 +26,8 @@ const SignupPage = () => {
     } = await signupFunc(user);
     try {
       if (encodedToken) {
-        localStorage.setItem("AUTH_TOKEN", JSON.stringify(encodedToken));
-        localStorage.setItem("user", JSON.stringify(userDetails));
+        localStorage.setItem("SCRIPTUS_AUTH_TOKEN", encodedToken);
+        localStorage.setItem("scriptus_user", JSON.stringify(userDetails));
         setAuth({
           isAuth: true,
           token: encodedToken,

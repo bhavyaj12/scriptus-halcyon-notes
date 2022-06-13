@@ -5,16 +5,16 @@ const useAuth = () => useContext(AuthContext);
 
 const AuthProvider = ({ children }) => {
   const [auth, setAuth] = useState({
-    isAuth: JSON.parse(localStorage.getItem("AUTH_TOKEN")) ? true : false,
-    token: JSON.parse(localStorage.getItem("AUTH_TOKEN")),
-    user: JSON.parse(localStorage.getItem("user")),
+    isAuth: localStorage.getItem("SCRIPTUS_AUTH_TOKEN") ? true : false,
+    token: localStorage.getItem("SCRIPTUS_AUTH_TOKEN"),
+    user: JSON.parse(localStorage.getItem("scriptus_user")),
   });
 
   useEffect(() => {
     setAuth({
-      isAuth: JSON.parse(localStorage.getItem("AUTH_TOKEN")) ? true : false,
-      token: JSON.parse(localStorage.getItem("AUTH_TOKEN")),
-      user: JSON.parse(localStorage.getItem("user")),
+      isAuth: localStorage.getItem("SCRIPTUS_AUTH_TOKEN") ? true : false,
+      token: localStorage.getItem("SCRIPTUS_AUTH_TOKEN"),
+      user: JSON.parse(localStorage.getItem("scriptus_user")),
     });
   }, []);
 

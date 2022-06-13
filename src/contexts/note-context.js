@@ -1,8 +1,8 @@
-import { useState, createContext, useContext, useReducer } from "react";
+import { useState, useEffect, createContext, useContext, useReducer } from "react";
+import { useAuth } from "../contexts";
 import { NotesReducer } from "../reducers";
 
 const NotesContext = createContext();
-const useNote = () => useContext(NotesContext);
 
 const NotesProvider = ({ children }) => {
   const [note, setNote] = useState({
@@ -27,5 +27,7 @@ const NotesProvider = ({ children }) => {
     </NotesContext.Provider>
   );
 };
+
+const useNote = () => useContext(NotesContext);
 
 export { useNote, NotesProvider };

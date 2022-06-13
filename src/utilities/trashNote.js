@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const trashNote = async (noteState, noteDispatch, note) => {
-  const authToken = JSON.parse(localStorage.getItem("AUTH_TOKEN"));
+  const authToken = localStorage.getItem("SCRIPTUS_AUTH_TOKEN");
   const Headers = { authorization: authToken };
   try {
     const {

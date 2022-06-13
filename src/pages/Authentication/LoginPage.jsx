@@ -16,7 +16,7 @@ const LoginPage = () => {
 
   const testLogin = {
     email: "guest@gmail.com",
-    password: "Guest1234",
+    password: "guest1234",
   };
 
   const loginSubmitHandler = async (user) => {
@@ -26,8 +26,8 @@ const LoginPage = () => {
         foundUser: { notes, archives, ...userDetails },
       } = await loginFunc(user);
       if (encodedToken) {
-        localStorage.setItem("AUTH_TOKEN", JSON.stringify(encodedToken));
-        localStorage.setItem("user", JSON.stringify(userDetails));
+        localStorage.setItem("SCRIPTUS_AUTH_TOKEN", encodedToken);
+        localStorage.setItem("scriptus_user", JSON.stringify(userDetails));
         setAuth({
           isAuth: true,
           token: encodedToken,
